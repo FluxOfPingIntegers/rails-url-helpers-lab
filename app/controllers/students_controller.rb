@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: :show
+  before_action :set_student, only: [:show, :activate]
   
   def index
     @students = Student.all
@@ -10,8 +10,8 @@ class StudentsController < ApplicationController
   end
 
   def activate
-    @student.activate = true
-    redirect "/students/:id"
+    @student.active = true
+    redirect_to student_path
   end
 
   private
