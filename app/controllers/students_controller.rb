@@ -10,7 +10,6 @@ class StudentsController < ApplicationController
   end
 
   def activate
-    self.set_student
     @student.activate = true
     redirect "/students/:id"
   end
