@@ -6,6 +6,12 @@ class StudentsController < ApplicationController
   end
 
   def show
+
+  end
+
+  def activate
+    @student.activate = true
+    redirect "students/:id"
   end
 
   private
